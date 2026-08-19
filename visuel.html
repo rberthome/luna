@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Visuel carré — Luna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; position: relative; font-family: "Atkinson Hyperlegible", sans-serif; }
+  .photo {
+    position: absolute; inset: 0;
+    background: url("media/luna-portrait.jpg") center 12% / cover no-repeat;
+  }
+  .voile {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(51,41,31,.55) 0%, rgba(51,41,31,0) 32%, rgba(51,41,31,0) 50%, rgba(51,41,31,.82) 100%);
+  }
+  .haut { position: absolute; top: 44px; left: 0; right: 0; text-align: center; }
+  .badge {
+    display: inline-block; background: #C43A28; color: #fff;
+    font-weight: 700; font-size: 44px; letter-spacing: .12em;
+    padding: 14px 42px; border-radius: 10px; text-transform: uppercase;
+  }
+  .bas { position: absolute; bottom: 48px; left: 60px; right: 60px; color: #fff; }
+  .nom {
+    font-family: "Fraunces", serif; font-weight: 900;
+    font-size: 190px; line-height: .95;
+    text-shadow: 0 4px 30px rgba(51,41,31,.5);
+  }
+  .infos { font-size: 42px; line-height: 1.4; margin-top: 18px; text-shadow: 0 2px 12px rgba(51,41,31,.7); }
+  .infos strong { color: #F1C784; }
+  .contact {
+    margin-top: 26px; background: #fff; color: #33291F;
+    border-radius: 14px; padding: 18px 28px;
+    font-size: 44px; font-weight: 700; text-align: center;
+  }
+  .contact small { display: block; font-size: 30px; font-weight: 400; }
+</style>
+</head>
+<body>
+  <div class="photo"></div>
+  <div class="voile"></div>
+  <div class="haut"><span class="badge">Chatte perdue</span></div>
+  <div class="bas">
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche et tabby, yeux vert amande. Disparue le <strong>dimanche 2 août</strong> derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive — ne pas la poursuivre.</p>
+    <div class="contact">06 XX XX XX XX · 06 XX XX XX XX<small>photos + vidéo : rberthome.github.io/luna</small></div>
+  </div>
+</body>
+</html>

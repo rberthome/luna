@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiche A4 — Luna perdue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --bark: #33291F;
+    --leaf-pale: #F1E5CE;
+    --alert: #C43A28;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Atkinson Hyperlegible", sans-serif; color: var(--bark); background: #888; }
+
+  .page {
+    width: 210mm; height: 297mm;
+    margin: 10px auto; background: var(--paper);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  @page { size: A4 portrait; margin: 0; }
+  @media print {
+    body { background: none; }
+    .page { margin: 0; }
+    .no-print { display: none; }
+  }
+  .no-print {
+    text-align: center; padding: 12px; background: var(--bark); color: #fff;
+    font-size: 14px;
+  }
+
+  .bandeau {
+    background: var(--alert); color: #fff; text-align: center;
+    padding: 7mm 0 6mm;
+  }
+  .bandeau .perdue {
+    font-family: "Fraunces", serif; font-weight: 900;
+    font-size: 26mm; line-height: 1; letter-spacing: .04em;
+  }
+  .bandeau .sous {
+    font-size: 7mm; font-weight: 700; margin-top: 1.5mm; letter-spacing: .06em;
+  }
+
+  .corps { flex: 1; display: flex; gap: 6mm; padding: 6mm 10mm 4mm; }
+  .col-photo { width: 88mm; display: flex; flex-direction: column; gap: 4mm; }
+  .col-photo img { width: 100%; object-fit: cover; border-radius: 3mm; }
+  .col-photo .principale { height: 105mm; object-position: center 15%; }
+  .col-photo .secondaire { height: 52mm; object-position: center 30%; }
+
+  .col-infos { flex: 1; display: flex; flex-direction: column; }
+  .nom {
+    font-family: "Fraunces", serif; font-weight: 900;
+    font-size: 24mm; line-height: 1; color: var(--bark);
+  }
+  .desc { font-size: 5.4mm; line-height: 1.45; margin-top: 3mm; }
+  .desc strong { color: var(--alert); }
+  .lieu {
+    background: var(--leaf-pale); border-radius: 3mm;
+    padding: 3.5mm 4mm; margin-top: 4mm; font-size: 5mm; line-height: 1.4;
+  }
+  .tel {
+    margin-top: auto; text-align: center;
+    background: var(--bark); color: #fff; border-radius: 3mm;
+    padding: 4mm 2mm;
+  }
+  .tel .num { font-size: 9.5mm; font-weight: 700; line-height: 1.35; }
+  .tel .mention { font-size: 4.2mm; opacity: .85; }
+  .qr-bloc {
+    display: flex; align-items: center; gap: 4mm; margin-top: 4mm;
+  }
+  .qr-bloc img { width: 30mm; height: 30mm; }
+  .qr-bloc p { font-size: 4.4mm; line-height: 1.4; }
+  .qr-bloc .url { font-weight: 700; font-size: 4mm; word-break: break-all; }
+
+  .franges {
+    display: flex; border-top: 1px dashed var(--bark);
+  }
+  .frange {
+    flex: 1; border-right: 1px dashed var(--bark);
+    padding: 2.5mm 1mm; text-align: center;
+    font-size: 3.4mm; line-height: 1.35;
+  }
+  .frange:last-child { border-right: none; }
+  .frange strong { display: block; font-size: 3.8mm; }
+</style>
+</head>
+<body>
+
+<div class="no-print">Imprimer : Cmd+P → format A4, marges « Aucune », imprimer les arrière-plans. Les languettes du bas se découpent.</div>
+
+<div class="page">
+  <div class="bandeau">
+    <div class="perdue">PERDUE</div>
+    <div class="sous">CHATTE BLANCHE ET TABBY — PALAMINY</div>
+  </div>
+
+  <div class="corps">
+    <div class="col-photo">
+      <img class="principale" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="secondaire" src="media/luna-arbre.jpg" alt="Luna en entier">
+    </div>
+    <div class="col-infos">
+      <div class="nom">Luna</div>
+      <p class="desc">
+        Jeune chatte <strong>blanche</strong> avec des marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande, nez rose.<br>
+        Docile mais <strong>craintive</strong> : ne la poursuivez pas, appelez-nous.
+      </p>
+      <div class="lieu">
+        <strong>Disparue le dimanche 2 août</strong><br>
+        derrière le Bricomarché de Palaminy (31220).<br>
+        Merci de vérifier garages, abris et caves.
+      </div>
+      <div class="qr-bloc">
+        <img src="media/qr-luna.png" alt="QR code vers la page de Luna">
+        <p>Photos, vidéo et dernières observations :<br><span class="url">rberthome.github.io/luna</span></p>
+      </div>
+      <div class="tel">
+        <div class="num">06 XX XX XX XX<br>06 XX XX XX XX</div>
+        <div class="mention">appel ou SMS, à toute heure — nous nous déplaçons</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="franges">
+    <div class="frange"><strong>LUNA — chatte perdue</strong>06 XX XX XX XX<br>rberthome.github.io/luna</div>
+    <div class="frange"><strong>LUNA — chatte perdue</strong>06 XX XX XX XX<br>rberthome.github.io/luna</div>
+    <div class="frange"><strong>LUNA — chatte perdue</strong>06 XX XX XX XX<br>rberthome.github.io/luna</div>
+    <div class="frange"><strong>LUNA — chatte perdue</strong>06 XX XX XX XX<br>rberthome.github.io/luna</div>
+    <div class="frange"><strong>LUNA — chatte perdue</strong>06 XX XX XX XX<br>rberthome.github.io/luna</div>
+    <div class="frange"><strong>LUNA — chatte perdue</strong>06 XX XX XX XX<br>rberthome.github.io/luna</div>
+  </div>
+</div>
+
+</body>
+</html>

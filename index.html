@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna — chatte perdue à Palaminy</title>
+<meta name="description" content="Luna, jeune chatte blanche et tabby, perdue depuis le dimanche 2 août derrière le Bricomarché de Palaminy (31220). Si vous la voyez, appelez-nous.">
+<meta property="og:title" content="LUNA — chatte perdue à Palaminy (31220)">
+<meta property="og:description" content="Blanche avec des marques tabby brun-gris sur la tête et le dos, yeux vert amande. Disparue le dimanche 2 août derrière le Bricomarché. Elle est craintive : ne la poursuivez pas, appelez-nous.">
+<meta property="og:image" content="https://rberthome.github.io/luna/media/luna-portrait.jpg">
+<meta property="og:url" content="https://rberthome.github.io/luna/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FFFDF8;      /* blanc cassé, le pelage de Luna */
+    --bark: #33291F;       /* brun écorce, texte */
+    --bark-soft: #5C4E3E;
+    --leaf: #C79E62;       /* ocre des feuilles sèches */
+    --leaf-pale: #F1E5CE;
+    --alert: #C43A28;      /* rouge de signalement */
+    --eye: #6F7D4C;        /* vert amande des yeux */
+    --display: "Fraunces", Georgia, serif;
+    --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--bark);
+    line-height: 1.55;
+    /* place pour la barre d'appel fixe */
+    padding-bottom: 92px;
+  }
+  a { color: var(--alert); }
+
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---- Héro ---- */
+  .hero { position: relative; }
+  .hero img {
+    display: block; width: 100%; max-height: 78vh;
+    object-fit: cover; object-position: center 20%;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(51,41,31,.55) 0%, rgba(51,41,31,0) 30%, rgba(51,41,31,0) 55%, rgba(51,41,31,.72) 100%);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 18px 20px 22px;
+  }
+  .hero-eyebrow {
+    align-self: flex-start;
+    background: var(--alert); color: var(--paper);
+    font-weight: 700; letter-spacing: .14em; font-size: .85rem;
+    padding: 6px 14px; border-radius: 4px; text-transform: uppercase;
+  }
+  .hero-name {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(4rem, 18vw, 7rem);
+    line-height: .95; color: var(--paper);
+    text-shadow: 0 2px 18px rgba(51,41,31,.45);
+  }
+  .hero-sub { color: var(--paper); font-size: 1.05rem; max-width: 30ch; text-shadow: 0 1px 8px rgba(51,41,31,.6); }
+
+  /* ---- Bandeau statut ---- */
+  .statut {
+    background: var(--bark); color: var(--leaf-pale);
+    padding: 14px 20px;
+  }
+  .statut .wrap { display: flex; gap: 12px; align-items: baseline; padding: 0; max-width: 600px; margin: 0 auto; }
+  .statut-label {
+    font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--leaf); white-space: nowrap;
+  }
+  .statut-texte { font-size: .98rem; }
+
+  /* ---- Sections ---- */
+  section { padding: 32px 0 8px; }
+  h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 1.5rem; margin-bottom: 12px; color: var(--bark);
+  }
+  p { margin-bottom: 12px; }
+  .fiche {
+    display: grid; grid-template-columns: auto 1fr; gap: 8px 16px;
+    background: var(--leaf-pale); border-radius: 10px;
+    padding: 18px 20px; margin: 8px 0 4px;
+  }
+  .fiche dt { font-weight: 700; color: var(--bark-soft); }
+  .fiche dd { margin: 0; }
+
+  .consignes { list-style: none; counter-reset: c; margin: 4px 0 8px; }
+  .consignes li {
+    counter-increment: c; position: relative;
+    padding: 10px 0 10px 46px; border-bottom: 1px solid var(--leaf-pale);
+  }
+  .consignes li::before {
+    content: counter(c);
+    position: absolute; left: 0; top: 10px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--eye); color: var(--paper);
+    font-weight: 700; display: grid; place-items: center;
+  }
+  .important {
+    background: #FBEFEA; border-left: 4px solid var(--alert);
+    border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 14px 0;
+  }
+  .important strong { color: var(--alert); }
+
+  video, .photo-secondaire {
+    display: block; width: 100%; border-radius: 12px; margin: 10px 0;
+  }
+  figcaption { font-size: .85rem; color: var(--bark-soft); font-style: italic; margin-top: -4px; }
+
+  .zone-lien { font-weight: 700; }
+
+  /* ---- Barre d'appel fixe ---- */
+  .barre-appel {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
+    background: var(--paper);
+    border-top: 2px solid var(--leaf);
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    display: flex; gap: 10px; justify-content: center;
+  }
+  .btn-appel {
+    flex: 1; max-width: 300px;
+    display: flex; flex-direction: column; align-items: center; gap: 1px;
+    background: var(--alert); color: var(--paper);
+    text-decoration: none; border-radius: 10px;
+    padding: 10px 8px; font-weight: 700; text-align: center;
+  }
+  .btn-appel small { font-weight: 400; font-size: .72rem; opacity: .9; }
+  .btn-appel:focus-visible, a:focus-visible { outline: 3px solid var(--eye); outline-offset: 2px; }
+
+  footer { padding: 28px 0 20px; font-size: .85rem; color: var(--bark-soft); }
+
+  @media (min-width: 700px) {
+    .hero img { border-radius: 0 0 16px 16px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-eyebrow { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .82; } }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="media/luna-portrait.jpg" alt="Luna, jeune chatte blanche avec des marques tabby brun-gris sur la tête, perchée dans un arbre" fetchpriority="high">
+  <div class="hero-overlay">
+    <span class="hero-eyebrow">Chatte perdue</span>
+    <div>
+      <h1 class="hero-name">Luna</h1>
+      <p class="hero-sub">Disparue le dimanche 2 août — derrière le Bricomarché de Palaminy (31220)</p>
+    </div>
+  </div>
+</div>
+
+<div class="statut" role="status">
+  <div class="wrap">
+    <span class="statut-label">Dernière trace</span>
+    <span class="statut-texte">dimanche 2 août, derrière le Bricomarché de Palaminy. Aucune observation confirmée depuis — elle se cache probablement à proximité.</span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section>
+    <h2>Comment la reconnaître</h2>
+    <dl class="fiche">
+      <dt>Robe</dt><dd>blanche, marques tabby brun-gris sur la tête, le dos et la queue</dd>
+      <dt>Yeux</dt><dd>vert amande, nez rose</dd>
+      <dt>Taille</dt><dd>jeune chatte, fine et agile — elle grimpe volontiers aux arbres</dd>
+      <dt>Caractère</dt><dd>docile et proche des gens, mais elle a fui de peur : elle est craintive en ce moment</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Elle bouge, la voici en vidéo</h2>
+    <p>Sa démarche et ses marques se reconnaissent mieux en mouvement :</p>
+    <video controls playsinline preload="metadata" poster="media/luna-video-poster.jpg">
+      <source src="media/luna-video.mp4" type="video/mp4">
+    </video>
+    <figure>
+      <img class="photo-secondaire" src="media/luna-arbre.jpg" alt="Luna en entier, perchée dans un petit arbre devant un portail : corps blanc, dos tacheté de brun-gris">
+      <figcaption>Luna en entier — le corps est surtout blanc, les taches sont sur le dessus.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Si vous la voyez</h2>
+    <ol class="consignes">
+      <li><strong>Ne la poursuivez pas.</strong> Elle est apeurée : courir vers elle la fera fuir plus loin. Restez à distance, parlez doucement.</li>
+      <li><strong>Notez le lieu et l'heure</strong>, même si elle est déjà repartie. Chaque observation compte.</li>
+      <li><strong>Prenez une photo si possible</strong>, même floue, même de loin.</li>
+      <li><strong>Appelez-nous ou envoyez un SMS</strong> immédiatement — les deux numéros sont en bas de l'écran. Nous nous déplaçons tout de suite.</li>
+    </ol>
+    <div class="important">
+      <strong>Vous habitez près du Bricomarché ?</strong> Merci de jeter un œil dans votre garage, abri de jardin, cave ou sous votre terrasse. Un chat effrayé s'enferme souvent sans pouvoir ressortir, parfois pendant des semaines.
+    </div>
+  </section>
+
+  <section>
+    <h2>Où elle a disparu</h2>
+    <p>Derrière le <a class="zone-lien" href="https://maps.google.com/?q=Bricomarch%C3%A9+Palaminy" target="_blank" rel="noopener">Bricomarché de Palaminy (31220)</a>, le dimanche 2 août. Effrayée, elle s'est probablement cachée dans un rayon proche : haies, bâtiments, zones de stockage, lotissements voisins.</p>
+  </section>
+
+  <footer>
+    Merci pour votre aide — chaque partage compte. Cette page est mise à jour à chaque signalement.
+  </footer>
+
+</main>
+
+<nav class="barre-appel" aria-label="Nous contacter">
+  <a class="btn-appel" href="tel:+33XXXXXXXXX1">📞 06 XX XX XX XX<small>appel ou SMS, à toute heure</small></a>
+  <a class="btn-appel" href="tel:+33XXXXXXXXX2">📞 06 XX XX XX XX<small>second contact</small></a>
+</nav>
+
+</body>
+</html>
