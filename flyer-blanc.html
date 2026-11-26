@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flyers A6 (x4) — Luna perdue, fond blanc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Atkinson Hyperlegible", sans-serif; background: #888; }
+  .no-print { text-align: center; padding: 12px 16px; background: #33291F; color: #fff; font-size: 14px; line-height: 1.5; }
+  .no-print strong { text-decoration: underline; }
+  .page {
+    width: 210mm; height: 297mm; margin: 10px auto; background: #fff;
+    display: grid; grid-template-columns: 105mm 105mm; grid-template-rows: 148.5mm 148.5mm;
+    overflow: hidden;
+  }
+  @page { size: A4 portrait; margin: 0; }
+  @media print { body { background: none; } .page { margin: 0; } .no-print { display: none; } }
+
+  .flyer {
+    position: relative; overflow: hidden; background: #fff; color: #33291F;
+    padding: 4mm 4.5mm; display: flex; flex-direction: column;
+    outline: .3mm dashed #999; outline-offset: -.15mm;
+  }
+  .haut { text-align: center; }
+  .badge {
+    display: inline-block; background: #C43A28; color: #fff;
+    font-weight: 700; font-size: 5.4mm; letter-spacing: .12em; text-transform: uppercase;
+    padding: 1.6mm 5mm; border-radius: 1.3mm;
+  }
+  .photos { display: flex; gap: 2mm; margin-top: 3mm; height: 69mm; }
+  .photos img { flex: 1; min-width: 0; height: 100%; object-fit: cover; border-radius: 1.8mm; }
+  .photos .tete { object-position: center 12%; }
+  .photos .corps { object-position: 62% 48%; }
+  .legende { display: flex; gap: 2mm; font-size: 2.6mm; opacity: .75; text-align: center; margin-top: .8mm; }
+  .legende span { flex: 1; }
+  .nom { font-family: "Fraunces", serif; font-weight: 900; font-size: 15mm; line-height: 1; margin-top: 1.6mm; }
+  .infos { font-size: 3.6mm; line-height: 1.36; margin-top: .8mm; }
+  .infos strong { color: #C43A28; }
+  .contact {
+    margin-top: auto; background: #fff; color: #33291F; border: .5mm solid #33291F; border-radius: 1.8mm;
+    padding: 2.2mm; display: flex; align-items: center; gap: 2.8mm;
+  }
+  .qr { width: 18mm; height: 18mm; display: block; flex: none; }
+  .tels { font-size: 5mm; font-weight: 700; line-height: 1.25; }
+  .tels small { display: block; font-size: 2.8mm; font-weight: 400; line-height: 1.35; margin-top: .8mm; }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  Imprimer en couleur : <strong>Cmd+P</strong> → format A4, marges « Aucune », activer « Imprimer les arrière-plans ».<br>
+  Chaque page contient 4 flyers : <strong>50 copies = 200 flyers</strong>. Découper le long des pointillés gris.
+</div>
+
+<div class="page">
+  <div class="flyer">
+    <div class="haut"><span class="badge">Chatte perdue</span></div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
+    </div>
+  </div>
+  <div class="flyer">
+    <div class="haut"><span class="badge">Chatte perdue</span></div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
+    </div>
+  </div>
+  <div class="flyer">
+    <div class="haut"><span class="badge">Chatte perdue</span></div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
+    </div>
+  </div>
+  <div class="flyer">
+    <div class="haut"><span class="badge">Chatte perdue</span></div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

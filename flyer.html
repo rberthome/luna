@@ -20,29 +20,33 @@
   @page { size: A4 portrait; margin: 0; }
   @media print { body { background: none; } .page { margin: 0; } .no-print { display: none; } }
 
-  .flyer { position: relative; overflow: hidden; outline: .3mm dashed rgba(255,255,255,.9); outline-offset: -.15mm; }
-  .photo { position: absolute; inset: 0; background: url("media/luna-portrait.jpg") center 10% / cover no-repeat; }
-  .voile {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(51,41,31,.5) 0%, rgba(51,41,31,0) 22%, rgba(51,41,31,0) 38%, rgba(51,41,31,.88) 72%, rgba(51,41,31,.95) 100%);
+  .flyer {
+    position: relative; overflow: hidden; background: #33291F; color: #fff;
+    padding: 4mm 4.5mm; display: flex; flex-direction: column;
+    outline: .3mm dashed rgba(255,255,255,.75); outline-offset: -.15mm;
   }
-  .haut { position: absolute; top: 5mm; left: 0; right: 0; text-align: center; }
+  .haut { text-align: center; }
   .badge {
     display: inline-block; background: #C43A28; color: #fff;
-    font-weight: 700; font-size: 5.6mm; letter-spacing: .12em; text-transform: uppercase;
-    padding: 1.8mm 5mm; border-radius: 1.3mm;
+    font-weight: 700; font-size: 5.4mm; letter-spacing: .12em; text-transform: uppercase;
+    padding: 1.6mm 5mm; border-radius: 1.3mm;
   }
-  .bas { position: absolute; bottom: 5mm; left: 5.5mm; right: 5.5mm; color: #fff; }
-  .nom { font-family: "Fraunces", serif; font-weight: 900; font-size: 21mm; line-height: .95; text-shadow: 0 .5mm 4mm rgba(51,41,31,.5); }
-  .infos { font-size: 3.9mm; line-height: 1.38; margin-top: 1.6mm; text-shadow: 0 .3mm 1.6mm rgba(51,41,31,.7); }
+  .photos { display: flex; gap: 2mm; margin-top: 3mm; height: 69mm; }
+  .photos img { flex: 1; min-width: 0; height: 100%; object-fit: cover; border-radius: 1.8mm; }
+  .photos .tete { object-position: center 12%; }
+  .photos .corps { object-position: 62% 48%; }
+  .legende { display: flex; gap: 2mm; font-size: 2.6mm; opacity: .75; text-align: center; margin-top: .8mm; }
+  .legende span { flex: 1; }
+  .nom { font-family: "Fraunces", serif; font-weight: 900; font-size: 15mm; line-height: 1; margin-top: 1.6mm; }
+  .infos { font-size: 3.6mm; line-height: 1.36; margin-top: .8mm; }
   .infos strong { color: #F1C784; }
   .contact {
-    margin-top: 3mm; background: #fff; color: #33291F; border-radius: 1.8mm;
-    padding: 2.4mm; display: flex; align-items: center; gap: 2.8mm;
+    margin-top: auto; background: #fff; color: #33291F; border-radius: 1.8mm;
+    padding: 2.2mm; display: flex; align-items: center; gap: 2.8mm;
   }
-  .qr { width: 19mm; height: 19mm; display: block; flex: none; }
-  .tels { font-size: 5.2mm; font-weight: 700; line-height: 1.25; }
-  .tels small { display: block; font-size: 2.8mm; font-weight: 400; line-height: 1.35; margin-top: 1mm; }
+  .qr { width: 18mm; height: 18mm; display: block; flex: none; }
+  .tels { font-size: 5mm; font-weight: 700; line-height: 1.25; }
+  .tels small { display: block; font-size: 2.8mm; font-weight: 400; line-height: 1.35; margin-top: .8mm; }
 </style>
 </head>
 <body>
@@ -54,55 +58,55 @@
 
 <div class="page">
   <div class="flyer">
-    <div class="photo"></div>
-    <div class="voile"></div>
     <div class="haut"><span class="badge">Chatte perdue</span></div>
-    <div class="bas">
-      <div class="nom">Luna</div>
-      <p class="infos">Blanche et tabby, yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
-      <div class="contact">
-        <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
-        <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
-      </div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
     </div>
   </div>
   <div class="flyer">
-    <div class="photo"></div>
-    <div class="voile"></div>
     <div class="haut"><span class="badge">Chatte perdue</span></div>
-    <div class="bas">
-      <div class="nom">Luna</div>
-      <p class="infos">Blanche et tabby, yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
-      <div class="contact">
-        <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
-        <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
-      </div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
     </div>
   </div>
   <div class="flyer">
-    <div class="photo"></div>
-    <div class="voile"></div>
     <div class="haut"><span class="badge">Chatte perdue</span></div>
-    <div class="bas">
-      <div class="nom">Luna</div>
-      <p class="infos">Blanche et tabby, yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
-      <div class="contact">
-        <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
-        <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
-      </div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
     </div>
   </div>
   <div class="flyer">
-    <div class="photo"></div>
-    <div class="voile"></div>
     <div class="haut"><span class="badge">Chatte perdue</span></div>
-    <div class="bas">
-      <div class="nom">Luna</div>
-      <p class="infos">Blanche et tabby, yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
-      <div class="contact">
-        <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
-        <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
-      </div>
+    <div class="photos">
+      <img class="tete" src="media/luna-portrait.jpg" alt="Luna, portrait">
+      <img class="corps" src="media/luna-tracteur.jpg" alt="Luna, corps entier">
+    </div>
+    <div class="nom">Luna</div>
+    <p class="infos">Blanche, marques <strong>tabby brun-gris</strong> sur la tête, le dos et la queue. Yeux vert amande. Disparue derrière le <strong>Bricomarché de Palaminy</strong> (31220). Craintive : ne pas la poursuivre.</p>
+    <div class="contact">
+      <img class="qr" src="media/qr-luna.png" alt="QR code vers la page de Luna">
+      <div class="tels">06 30 22 23 32<br>06 17 09 84 32<small>appel ou SMS, à toute heure<br>photos + vidéo : rberthome.github.io/luna</small></div>
     </div>
   </div>
 </div>
